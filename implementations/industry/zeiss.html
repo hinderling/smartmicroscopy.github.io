@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Automation of optogenetic targeting &#8212; Smart Microscopy Working Group&#39;s Website</title>
+    <title>Open Application Development (OAD) in Zeiss ZEN &#8212; Smart Microscopy Working Group&#39;s Website</title>
   
   
   
@@ -58,11 +58,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'implementations/academic/unibe';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'implementations/industry/zeiss';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Smart Microscopy as a Service" href="cci-ug.html" />
-    <link rel="prev" title="Available implementations" href="../../implementations.html" />
+    <link rel="next" title="ImSwitch for openUC2" href="openUC2.html" />
+    <link rel="prev" title="Inscoper’s Roboscope" href="inscoper.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -195,12 +195,12 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../implementations.html">Available implementations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Automation of optogenetic targeting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cci-ug.html">Smart Microscopy as a Service</a></li>
-<li class="toctree-l2"><a class="reference internal" href="uu.html">Outcome-driven microscopy to guide cell biology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../industry/inscoper.html">Inscoper’s Roboscope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../industry/zeiss.html">Open Application Development (OAD) in Zeiss ZEN</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../industry/openUC2.html">ImSwitch for openUC2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../academic/unibe.html">Automation of optogenetic targeting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../academic/cci-ug.html">Smart Microscopy as a Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../academic/uu.html">Outcome-driven microscopy to guide cell biology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inscoper.html">Inscoper’s Roboscope</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Open Application Development (OAD) in Zeiss ZEN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openUC2.html">ImSwitch for openUC2</a></li>
 
 
 
@@ -279,7 +279,7 @@
       
       
       
-      <li><a href="../../_sources/implementations/academic/unibe.md" target="_blank"
+      <li><a href="../../_sources/implementations/industry/zeiss.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -363,7 +363,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Automation of optogenetic targeting</h1>
+    <h1>Open Application Development (OAD) in Zeiss ZEN</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -373,11 +373,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-focus-and-scientific-questions-asked">Specific Focus and scientific questions asked</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-findings-and-innovations">Key findings and innovations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-and-implementation-details">Methodology and implementation details</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributions-to-interoperability">Contributions to Interoperability</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#approaches-to-smart-microscopy">Approaches to smart microscopy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-acquisition-automated-photomanipulation">Guided Acquisition / Automated Photomanipulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment-feedback">Experiment Feedback</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macro-editor-simple-api-object-model">Macro Editor / Simple API / Object Model</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -389,53 +390,63 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="automation-of-optogenetic-targeting">
-<h1>Automation of optogenetic targeting<a class="headerlink" href="#automation-of-optogenetic-targeting" title="Link to this heading">#</a></h1>
-<p><strong>Lucien Hinderling, Benjamin Grädel, Alex Landolt, Maciej Dobrzinsky, Olivier Pertz</strong>, University of Bern, Institute of Cell Biology</p>
-<section id="specific-focus-and-scientific-questions-asked">
-<h2>Specific Focus and scientific questions asked<a class="headerlink" href="#specific-focus-and-scientific-questions-asked" title="Link to this heading">#</a></h2>
-<p>The cytoskeleton drives key cellular functions like morphology, polarity and migration, and is regulated by Rho GTPases that act as molecular switches.  Traditionally, the Rho GTPases Rac1, Cdc42, and RhoA were thought to independently control actin polymerization, filopodia formation, and contractility in a top-down manner. Recent biosensor studies have revealed that these GTPases are however dynamically coordinated at the subcellular scale, interacting in complex signaling networks at the timescale of seconds. Feedback from cytoskeletal structures directly influences Rho GTPase activity, creating an intricate, reciprocal relationship between signaling and structure.</p>
-<p>Optogenetics allows precise spatio-temporal control of Rho GTPase signaling, enabling direct causal testing of this feedback regulation, by shining light on specific cellular regions and measuring the signaling response. Applying optogenetic stimulation in live cells requires constant manual adjustment of the illuminated regions to follow cellular movements. This approach is thus time-intensive and limited in throughput, posing a challenge for studying cytoskeletal signaling in dynamic contexts.</p>
-<p>Smart microscopy addresses these limitations by integrating optogenetics with automated imaging systems that use digital mirror devices (DMDs) or galvo mirrors to dynamically update illumination patterns. Using computer vision, these microscopes autonomously detect cytoskeletal structures and respond to cellular behavior. Adapting light stimulation patterns in real time, this approach allows to systematically probe local heterogeneity in cellular signal processing (Fig. 1A).</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="open-application-development-oad-in-zeiss-zen">
+<h1>Open Application Development (OAD) in Zeiss ZEN<a class="headerlink" href="#open-application-development-oad-in-zeiss-zen" title="Link to this heading">#</a></h1>
+<p><strong>Philipp Seidel</strong>, Carl Zeiss Microscopy GmbH</p>
+<section id="approaches-to-smart-microscopy">
+<h2>Approaches to smart microscopy<a class="headerlink" href="#approaches-to-smart-microscopy" title="Link to this heading">#</a></h2>
+<p>The user base of ZEN is diverse both in terms of research / application focus and technical expertise. Hence, we aim at offering Smart Imaging interfaces at different levels of integration with ZEN’s main user interface. In the following sections I aim at illustrating these different tools and, their key features, their key applications, limitations and if available, references to further material.</p>
+<section id="guided-acquisition-automated-photomanipulation">
+<h3>Guided Acquisition / Automated Photomanipulation<a class="headerlink" href="#guided-acquisition-automated-photomanipulation" title="Link to this heading">#</a></h3>
 <div class="figure-like docutils">
-<p><img alt="UNIBE RTM" src="../../_images/fig_01.png" /></p>
-<p><strong>Fig. 1: Smart microscopy for automated subcellular targeting: A)</strong> Cytoskeletal structures are detected with computer vision and targeted with optogenetic stimulation. Local response of the cells is measured. <strong>B)</strong> Cell response depends on stimulation location, highlighting subcellular heterogeneity in cellular signal processing. <strong>C)</strong> Overview of architecture. The user interfaces with the microscope control software via GUI, code or by using an LLM. The microscope controls live cells using optogenetics and reads their response using fluorescent biosensors.</p>
+<p><img alt="Guided_Acquisition_UI" src="../../_images/Guided_Acquisition_UI.png" /></p>
+<p>Fig. 1: <strong>Guided Acquisition / Automated Photomanipulation</strong></p>
 </div>
+<p>These GUI-based tools offer a simplified entry into typical Smart Imaging workflows addressing imaging novices and scientists without access to coding expertise.</p>
+<p>The <strong>Guided Acquisition (GA)</strong> user interface is shown in Fig. 1. It follows a fixed workflow, where an overview scan is followed by an image analysis block and several detailed scans. Positions (FOVs) of the detailed scans are derived from the image analysis. To keep the user interface simple, the user plugs in pre-configure experimental and image analysis settings for the three main steps. The user can furthermore add certain optional components, e.g. additional processing steps for the raw overview image, or manually adjust the number of detailed scans. Time-lapse acquisitions can be defined to allow for detection of sparse events.</p>
+<p>GA builds modular on top of generic ZEN functionality like Acquisition Tab and Image Analysis Wizard. Besides simplifying usability, this comes with the benefit that other built-in features (like Deep Learning segmentations) also seamlessly work with GA. GA also is compatible with image data correlation via ZEN Connect, or high throughput well plate experiments.</p>
+<p>Typical applications are high-resolution 3D imaging of sparse samples like embryos or organoids. Here, via Smart Imaging, the main workflow improvements are reduced data sizes and time-to-result. Follow the links at the end of this section for more details on such use cases.</p>
+<p>Automated Photomanipulation follows a very similar approach. In a dedicated UI, the user assigns a pre-configured acquisition experiment and image analysis scheme. The notable difference is that instead of defining FOVs for subsequent high-resolution scans, the workflow defines image sub-regions that are subsequently bleached and tracked (by time-lapse acquisitions) to determine fluorescence recovery (FRAP) or similar read-outs. Besides, this tool could also serve simple opto-genetics experiments.</p>
+<p>Links:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/zeiss-microscopy/OAD/tree/master/Guided_Acquisition">Guided Acquisition OAD documentation</a></p></li>
+<li><p><a class="reference external" href="https://www.zeiss.com/microscopy/en/resources/insights-hub/life-sciences/automate-your-experiments-with-image-analysis-and-guided-acquisition.html">Guided Acquisition Webinar</a></p></li>
+<li><p><a class="reference external" href="https://www.zeiss.com/microscopy/en/resources/insights-hub/life-sciences/the-smart-microscope-for-automated-workflows-celldiscoverer-7-with-lsm-900.html">Smart Workflows with Celldiscoverer 7</a></p></li>
+</ul>
 </section>
-<section id="key-findings-and-innovations">
-<h2>Key findings and innovations<a class="headerlink" href="#key-findings-and-innovations" title="Link to this heading">#</a></h2>
-<p>In a recent study exploring feedback regulation between Rho and a cytoskeletal structure called focal adhesions, we demonstrated the capability of this approach <span id="id1">[<a class="reference internal" href="../../markdown.html#id3" title="Max Heydasch, Lucien Hinderling, Jakobus van Unen, Maciej Dobrzynski, and Olivier Pertz. Gtpase activating protein dlc1 spatio-temporally regulates rho signaling. eLife, December 2023. URL: http://dx.doi.org/10.7554/eLife.90305.1, doi:10.7554/elife.90305.1.">Heydasch <em>et al.</em>, 2023</a>]</span>. Using an optogenetic actuator- biosensor circuit to activate Rho and measure Rho activity, we investigated DLC1, a regulator of Rho that localizes to focal adhesions.</p>
-<p>By automatically detecting focal adhesions, we systematically analyzed cellular responses to Rho activation, probing thousands of subcellular regions across hundreds of cells in a fully automated manner (Fig. 1B). With this high-throughput approach, we found that DLC1 maintains force homeostasis at focal adhesions by locally increasing Rho activity in response to mechanical stress. With the manual low-throughput methods we used initially, the regulatory dynamics were masked by cell-to-cell variability.</p>
-<p>Together, optogenetics and smart microscopy offer a scalable, high-precision method to dissect complex feedback-driven signaling networks, providing novel insights into cytoskeletal regulation. By swapping out the optogenetic actuator and biosensor circuit, this approach can be adapted to study spatio-temporal signaling dynamics across various domains of cell biology.</p>
-</section>
-<section id="methodology-and-implementation-details">
-<h2>Methodology and implementation details<a class="headerlink" href="#methodology-and-implementation-details" title="Link to this heading">#</a></h2>
-<p>To control and automate the microscope we built an open-source software stack (Fig. 1C).  Our primary challenge was integrating control of all hardware devices (camera, stage, light source, DMD) within a single software environment. We build upon <a class="reference external" href="https://micro-manager.org">Micro-Manager</a>, which provides drivers for over 250 devices. For feedback logic and data analysis, we chose Python due to its rich libraries for computer vision and signal processing. Python’s accessibility and feature-rich ecosystem make it an ideal choice. We bridge Micro-Manager’s C++ device drivers to Python using <a class="reference external" href="https://github.com/micro-manager/pymmcore">PyMMCore</a>.</p>
-<p>Our smart microscopy experiments rely on complex image processing pipelines that generate diverse outputs (segmentation masks, point detections, tracks, biosensor quantification). These pipelines have to be adapted to cellular variability: cell appearance, biosensors, and morphology differ from experiment to experiment based on factors like drug treatment. Since we need real-time image processing during experiments, there is no time for extensive model training or post-acquisition parameter tuning. To address this, we built <a class="reference external" href="https://github.com/guiwitz/napari-convpaint">Convpaint</a>, an interactive pixel classifier that can be trained on a single sample image from that experiment. We use <a class="reference external" href="https://github.com/guiwitz/napari-convpaint">Napari</a>, a multimodal image viewer for Python, to preview the image processing results, facilitating on-the-fly parameter tuning before starting the experiment.</p>
-<p>Napari also allows us to create custom microscope control widgets (e.g., for previewing image analysis, calibrating the DMD, setting experimental parameters). This setup enables even complex smart microscopy experiments to be run without coding. While commercial microscope control software provides extensive GUIs for standardized experiments, custom experiments usually require scripting. With Napari, we can build GUIs to streamline accessibility even for highly customized experiments and technically complex setups. Recently a plugin has been developed (<a class="reference external" href="https://github.com/pymmcore-plus/napari-micromanager%5D">napari-micromanager</a>) that provides a GUI for all (non-smart) microscope operations.</p>
-<p>Each experiment is documented in a <a class="reference external" href="https://jupyter.org">Jupyter notebook</a>, detailing algorithms and experiment variables like the stimulation logic. This practically provides automated documentation. Re-running an experiment is as simple as re-running the notebook.</p>
-<p>To maximize experimental throughput, we use a main thread for scheduling hardware control events (move stage, acquire image, stimulate region), while image processing runs on separate threads for different fields of view.</p>
-<p>All image data and processing results are continuously stored, allowing inspection at any time during the experiment and faster iteration time when troubleshooting. From the extracted data,  we also automatically generate quality control plots (segmentation overlays, tracking statistics). At the end of each experiment, plots can be created from the microscope output data with no further processing.</p>
-</section>
-<section id="contributions-to-interoperability">
-<h2>Contributions to Interoperability<a class="headerlink" href="#contributions-to-interoperability" title="Link to this heading">#</a></h2>
-<p>Micro-Manager not only offers extensive device driver support (see <a class="reference external" href="https://micro-manager.org/Device_Support">list of supported devices</a>), making our workflow compatible with a wide range of custom microscope setups globally, but it also provides standardized interfaces for the core device types in modern microscopy. This framework ensures that our code remains hardware-agnostic; for instance, any DMD can be seamlessly integrated as long as it is implemented as a <a class="reference external" href="https://micro-manager.org/GenericSLM">genericSLM device</a> in Micro-Manager (we currently use the <a class="reference external" href="https://micro-manager.org/Mosaic3">Andor Mosaic 3</a> and <a class="reference external" href="https://micro-manager.org/MightexPolygon">Mightex Polygon 1000</a>).
-We define acquisition events in an abstract format using <a class="reference external" href="https://pymmcore-plus.github.io/useq-schema/">useq-schema</a>, which could theoretically be adapted for use with other microscope control software.</p>
-</section>
-<section id="limitations">
-<h2>Limitations<a class="headerlink" href="#limitations" title="Link to this heading">#</a></h2>
-<p>These abstractions are feasible due to a growing community around Micro-Manager. Sustained development and critical mass forming around its ecosystem encouraged many hardware vendors to make their devices compatible with the software. However, the current abstractions are designed for classical microscope automation without feedback components. All smart features in our pipeline remain outside any established standards.
-Currently, we rely on custom data structures to store results. We plan to implement <a class="reference external" href="https://ngff.openmicroscopy.org/latest/">OME-Zarr</a> to standardize metadata storage and processing.
-Although much of our pipeline can be tested in silico, we lack a simulator for photomanipulation. In silico testing is essential for troubleshooting and the implementation of automated testing across our pipelines.</p>
-<hr class="docutils" />
-<div class="docutils container" id="id2">
-<div role="list" class="citation-list">
-<div class="citation" id="id3" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>Max Heydasch, Lucien Hinderling, Jakobus van Unen, Maciej Dobrzynski, and Olivier Pertz. Gtpase activating protein dlc1 spatio-temporally regulates rho signaling. <em>eLife</em>, December 2023. URL: <a class="reference external" href="http://dx.doi.org/10.7554/eLife.90305.1">http://dx.doi.org/10.7554/eLife.90305.1</a>, <a class="reference external" href="https://doi.org/10.7554/elife.90305.1">doi:10.7554/elife.90305.1</a>.</p>
+<section id="experiment-feedback">
+<h3>Experiment Feedback<a class="headerlink" href="#experiment-feedback" title="Link to this heading">#</a></h3>
+<div class="figure-like docutils">
+<p><img alt="Experiment_Feedback" src="../../_images/Experiment_Feedback.png" /></p>
+<p>Fig. 2: <strong>Experiment Feedback</strong></p>
 </div>
+<p>This is basically an advanced scripting tool directly integrated into a ZEN acquisition setup. It does require coding but is simpler to set up and in certain situations more powerful than OAD scripts.</p>
+<p>The crucial feature of Experiment Feedback is the possibility to tune many experimental parameters “on-the-fly” during an ongoing acquisition. This includes parameters like exposure time, lamp intensity, time series intervals, objectives, stage positions and many more. It features (like GA) a pre-configured image analysis to measure sample parameters and automatically respond to them.</p>
+<p>Some use cases become very easy to implement with Experiment Feedback, e.g. tracking objects during acquisition. Please find more examples in the linked Github page.</p>
+<p>Links:</p>
+<ul class="simple">
+<li><p><a class="github reference external" href="https://github.com/zeiss-microscopy/OAD/tree/master/Experiment_Feedback">zeiss-microscopy/OAD</a></p></li>
+<li><p><a class="reference external" href="https://www.zeiss.com/microscopy/en/products/software/zeiss-zen/zen-developer-toolkit.html">ZEN Developer Toolkit</a></p></li>
+</ul>
+</section>
+<section id="macro-editor-simple-api-object-model">
+<h3>Macro Editor / Simple API / Object Model<a class="headerlink" href="#macro-editor-simple-api-object-model" title="Link to this heading">#</a></h3>
+<div class="figure-like docutils">
+<p><img alt="Macro Editor" src="../../_images/Macro_Editor.png" /></p>
+<p>Fig. 3: <strong>Macro Editor</strong></p>
 </div>
-</div>
+<p>The main feature of OAD, as of today, is the scripting interface called “Simple API”. Most importantly, it comes with a small macro editor integrated in ZEN, and it offers interfaces for external applications written e.g. in Python (see links below for more details).</p>
+<p>Internally, the Simple API uses IronPython, which is a C# implementation of Python with the purpose to serve .NET applications. Most noteworthy, this allows for implicit use of ZEN’s object model, hence, direct access to experimental setups, processing functions or czi image, and their respective methods. The macro editor is equipped with debugging, code-completion, recording (of a user’s interaction with ZEN) and documentation, simplifying onboarding and troubleshooting.</p>
+<p>For external applications, COM and TCP-IP interfaces can be used. This allows tackling more complex use cases that requires a more refined code structure or additional libraries.</p>
+<p>Simple API is most useful for integrating standard ZEN functionality into custom workflows for the purpose of process automation. Standard smart microscopy is covered by accessibility of basic HW functions like stage movements and objectives. However, it is not designed to change deeper acquisition parameters dynamically (like Experiment Feedback), and therefore has limitations for advanced smart imaging approaches.</p>
+<p>Links:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/zeiss-microscopy/OAD/tree/master/Scripts_IronPython2">Various scripts</a></p></li>
+<li><p><a class="reference external" href="https://github.com/zeiss-microscopy/OAD/tree/master/Interfaces">Interfaces</a></p></li>
+<li><p><a class="reference external" href="https://github.com/zeiss-microscopy/OAD/tree/master/SmartMicroscopy/Detecting%20Mitosis">Application</a></p></li>
+<li><p><a class="reference external" href="https://www.zeiss.com/microscopy/en/products/software/zeiss-zen/zen-developer-toolkit.html">Developer Toolkit</a></p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -452,7 +463,7 @@ Although much of our pipeline can be tested in silico, we lack a simulator for p
         },
         kernelOptions: {
             name: "python3",
-            path: "./implementations/academic"
+            path: "./implementations/industry"
         },
         predefinedOutput: true
     }
@@ -470,20 +481,20 @@ Although much of our pipeline can be tested in silico, we lack a simulator for p
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../implementations.html"
+       href="inscoper.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Available implementations</p>
+        <p class="prev-next-title">Inscoper’s Roboscope</p>
       </div>
     </a>
     <a class="right-next"
-       href="cci-ug.html"
+       href="openUC2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Smart Microscopy as a Service</p>
+        <p class="prev-next-title">ImSwitch for openUC2</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -503,11 +514,12 @@ Although much of our pipeline can be tested in silico, we lack a simulator for p
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-focus-and-scientific-questions-asked">Specific Focus and scientific questions asked</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-findings-and-innovations">Key findings and innovations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-and-implementation-details">Methodology and implementation details</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributions-to-interoperability">Contributions to Interoperability</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#approaches-to-smart-microscopy">Approaches to smart microscopy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-acquisition-automated-photomanipulation">Guided Acquisition / Automated Photomanipulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment-feedback">Experiment Feedback</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macro-editor-simple-api-object-model">Macro Editor / Simple API / Object Model</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
