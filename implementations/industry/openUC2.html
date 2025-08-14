@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=0915d2f8" />
@@ -61,7 +61,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'implementations/industry/openUC2';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Public Notes" href="../../notes.html" />
+    <link rel="next" title="Automation of spatial single-cell analysis with Cytely" href="cytely.html" />
     <link rel="prev" title="Open Application Development (OAD) in Zeiss ZEN" href="zeiss.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -193,6 +193,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../members/profiles/NorlinN.html">Nils Norlin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../members/profiles/HeilH.html">Hannah S. Heil</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../members/profiles/HinderlingL.html">Lucien Hinderling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../members/profiles/HalavatyiA.html">Aliaksandr Halavatyi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../members/profiles/DiederichB.html">Benedict Diederich</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../implementations.html">Available implementations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -200,7 +202,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../academic/cci-ug.html">Smart Microscopy as a Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../academic/uu.html">Outcome-driven microscopy to guide cell biology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../academic/uow.html">CelFDrive: Multimodal AI-Assisted Microscopy for Detection of Rare Events</a></li>
-<li class="toctree-l2"><a class="reference internal" href="inscoper.html">Inscoper’s Roboscope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../academic/embl.html">Modular adaptive feedback microscopy workflows with AutoMicTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inscoper.html">Inscoper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="zeiss.html">Open Application Development (OAD) in Zeiss ZEN</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">ImSwitch for openUC2</a></li>
 
@@ -208,6 +211,7 @@
 
 
 
+<li class="toctree-l2"><a class="reference internal" href="cytely.html">Automation of spatial single-cell analysis with Cytely</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notes.html">Public Notes</a></li>
@@ -452,16 +456,16 @@ document.write(`
 <p>openUC2 is entirely open source, committed to creating a highly interoperable ecosystem where diverse components seamlessly interact through standardized interfaces. In addition to that, we have created a firmware specifically designed for the ESP32 microocontroller. This firmware is designed to control various hardware components such as lasers, LEDs, motors, and galvo scanners using a unified codebase adaptable across multiple hardware configurations. This flexibility is further enhanced through CAN and I2C interfaces, facilitating the integration and control of external components. Low-level hardware control emphasizes human-readable interoperability through JSON-based dictionaries, which simplifies adding new parameters and functionalities. To facilitate rapid testing and interaction, we developed a web application leveraging WebSerial API, enabling immediate hardware access without additional installation. This setup supports straightforward experiments, such as browser-based time-lapse imaging using standard USB and UVC webcams, further emphasizing ease-of-use and accessibility.</p>
 <div class="figure-like docutils">
 <p><img alt="arkitekt" src="../../_images/flashtool.png" /></p>
-<p>Fig. 6: <strong>To further lower the entry barrier to get starting with smart microscopy experiments, openUC2 offers the abbility to flash the firmware to the ESP32s using the openUC2 Flashing tool in the web</strong></p>
+<p>Fig. 7: <strong>To further lower the entry barrier to get starting with smart microscopy experiments, openUC2 offers the abbility to flash the firmware to the ESP32s using the openUC2 Flashing tool in the web</strong></p>
 </div>
 <div class="figure-like docutils">
 <p><img alt="arkitekt" src="../../_images/fwtest.png" /></p>
-<p>Fig. 6: <strong>The Web-serial Standard enables the use of usb serial devices without the installation of additional software</strong></p>
+<p>Fig. 8: <strong>The Web-serial Standard enables the use of usb serial devices without the installation of additional software</strong></p>
 </div>
 <p>A notable collaboration with FLIMLabs showcases this interoperability, where their open REST API was successfully integrated into the ImSwitch environment, enabling direct control and analysis of FLIM hardware. The combination of openUC2 and ImSwitch aims to foster an open ecosystem that allows extensive external interaction without restrictive agreements like NDAs.</p>
 <div class="figure-like docutils">
 <p><img alt="workflow" src="../../_images/rest.png" /></p>
-<p>Fig. 6: <strong>An open REST API documented through the openapi swagger schema enables a fast interaction with the ImSwitch backend through the browser</strong></p>
+<p>Fig. 9: <strong>An open REST API documented through the openapi swagger schema enables a fast interaction with the ImSwitch backend through the browser</strong></p>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="limitations">
@@ -566,11 +570,11 @@ Documentation remains incomplete, presenting challenges for new users integratin
       </div>
     </a>
     <a class="right-next"
-       href="../../notes.html"
+       href="cytely.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Public Notes</p>
+        <p class="prev-next-title">Automation of spatial single-cell analysis with Cytely</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Open Application Development (OAD) in Zeiss ZEN &#8212; Smart Microscopy Working Group&#39;s Website</title>
+    <title>Automation of spatial single-cell analysis with Cytely &#8212; Smart Microscopy Working Group&#39;s Website</title>
   
   
   
@@ -58,11 +58,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'implementations/industry/zeiss';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'implementations/industry/cytely';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ImSwitch for openUC2" href="openUC2.html" />
-    <link rel="prev" title="Inscoper" href="inscoper.html" />
+    <link rel="next" title="Public Notes" href="../../notes.html" />
+    <link rel="prev" title="ImSwitch for openUC2" href="openUC2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -204,14 +204,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../academic/uow.html">CelFDrive: Multimodal AI-Assisted Microscopy for Detection of Rare Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../academic/embl.html">Modular adaptive feedback microscopy workflows with AutoMicTools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inscoper.html">Inscoper</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Open Application Development (OAD) in Zeiss ZEN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zeiss.html">Open Application Development (OAD) in Zeiss ZEN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="openUC2.html">ImSwitch for openUC2</a></li>
 
 
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="cytely.html">Automation of spatial single-cell analysis with Cytely</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Automation of spatial single-cell analysis with Cytely</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notes.html">Public Notes</a></li>
@@ -285,7 +285,7 @@
       
       
       
-      <li><a href="../../_sources/implementations/industry/zeiss.md" target="_blank"
+      <li><a href="../../_sources/implementations/industry/cytely.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -369,7 +369,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Open Application Development (OAD) in Zeiss ZEN</h1>
+    <h1>Automation of spatial single-cell analysis with Cytely</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -379,12 +379,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#approaches-to-smart-microscopy">Approaches to smart microscopy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-acquisition-automated-photomanipulation">Guided Acquisition / Automated Photomanipulation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment-feedback">Experiment Feedback</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macro-editor-simple-api-object-model">Macro Editor / Simple API / Object Model</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-focus-and-scientific-questions-asked">Specific Focus and scientific questions asked</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-findings-and-innovations">Key findings and innovations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-and-implementation-details">Methodology and implementation details</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributions-to-interoperability">Contributions to interoperability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
 </ul>
             </nav>
         </div>
@@ -396,63 +395,49 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="open-application-development-oad-in-zeiss-zen">
-<h1>Open Application Development (OAD) in Zeiss ZEN<a class="headerlink" href="#open-application-development-oad-in-zeiss-zen" title="Link to this heading">#</a></h1>
-<p><strong>Philipp Seidel</strong>, Carl Zeiss Microscopy GmbH</p>
-<section id="approaches-to-smart-microscopy">
-<h2>Approaches to smart microscopy<a class="headerlink" href="#approaches-to-smart-microscopy" title="Link to this heading">#</a></h2>
-<p>The user base of ZEN is diverse both in terms of research / application focus and technical expertise. Hence, we aim at offering Smart Imaging interfaces at different levels of integration with ZEN’s main user interface. In the following sections I aim at illustrating these different tools and, their key features, their key applications, limitations and if available, references to further material.</p>
-<section id="guided-acquisition-automated-photomanipulation">
-<h3>Guided Acquisition / Automated Photomanipulation<a class="headerlink" href="#guided-acquisition-automated-photomanipulation" title="Link to this heading">#</a></h3>
-<div class="figure-like docutils">
-<p><img alt="Guided_Acquisition_UI" src="../../_images/Guided_Acquisition_UI.png" /></p>
-<p>Fig. 1: <strong>Guided Acquisition / Automated Photomanipulation</strong></p>
-</div>
-<p>These GUI-based tools offer a simplified entry into typical Smart Imaging workflows addressing imaging novices and scientists without access to coding expertise.</p>
-<p>The <strong>Guided Acquisition (GA)</strong> user interface is shown in Fig. 1. It follows a fixed workflow, where an overview scan is followed by an image analysis block and several detailed scans. Positions (FOVs) of the detailed scans are derived from the image analysis. To keep the user interface simple, the user plugs in pre-configure experimental and image analysis settings for the three main steps. The user can furthermore add certain optional components, e.g. additional processing steps for the raw overview image, or manually adjust the number of detailed scans. Time-lapse acquisitions can be defined to allow for detection of sparse events.</p>
-<p>GA builds modular on top of generic ZEN functionality like Acquisition Tab and Image Analysis Wizard. Besides simplifying usability, this comes with the benefit that other built-in features (like Deep Learning segmentations) also seamlessly work with GA. GA also is compatible with image data correlation via ZEN Connect, or high throughput well plate experiments.</p>
-<p>Typical applications are high-resolution 3D imaging of sparse samples like embryos or organoids. Here, via Smart Imaging, the main workflow improvements are reduced data sizes and time-to-result. Follow the links at the end of this section for more details on such use cases.</p>
-<p>Automated Photomanipulation follows a very similar approach. In a dedicated UI, the user assigns a pre-configured acquisition experiment and image analysis scheme. The notable difference is that instead of defining FOVs for subsequent high-resolution scans, the workflow defines image sub-regions that are subsequently bleached and tracked (by time-lapse acquisitions) to determine fluorescence recovery (FRAP) or similar read-outs. Besides, this tool could also serve simple opto-genetics experiments.</p>
-<p>Links:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/zeiss-microscopy/OAD/tree/master/Guided_Acquisition">Guided Acquisition OAD documentation</a></p></li>
-<li><p><a class="reference external" href="https://www.zeiss.com/microscopy/en/resources/insights-hub/life-sciences/automate-your-experiments-with-image-analysis-and-guided-acquisition.html">Guided Acquisition Webinar</a></p></li>
-<li><p><a class="reference external" href="https://www.zeiss.com/microscopy/en/resources/insights-hub/life-sciences/the-smart-microscope-for-automated-workflows-celldiscoverer-7-with-lsm-900.html">Smart Workflows with Celldiscoverer 7</a></p></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="automation-of-spatial-single-cell-analysis-with-cytely">
+<h1>Automation of spatial single-cell analysis with Cytely<a class="headerlink" href="#automation-of-spatial-single-cell-analysis-with-cytely" title="Link to this heading">#</a></h1>
+<p><strong>Karl Johansson, Johannes Kumra Ahnlinde, Oscar André, Philip Nordenfelt, Pontus Nordenfelt</strong>
+Cytely AB, Medicon Village, Lund, Sweden</p>
+<section id="specific-focus-and-scientific-questions-asked">
+<h2>Specific Focus and scientific questions asked<a class="headerlink" href="#specific-focus-and-scientific-questions-asked" title="Link to this heading">#</a></h2>
+<p>Traditional microscopy excels at capturing subcellular structures but typically falls short in providing comprehensive population-level context, which is crucial to understanding cellular heterogeneity and rare cellular events. Conventional high-resolution imaging approaches tend to focus on a limited number of cells, thereby introducing potential biases and limiting statistical power. Conversely, high-content screening often compromises spatial resolution, making it reducing the ability to discern subcellular phenotypes. The central challenge addressed by Cytely is how to efficiently automate microscopy workflows to integrate high-resolution, single-cell spatial context with broad, population-level insights, enabling unbiased and reproducible analysis of diverse cellular phenotypes, particularly rare and dynamic events.</p>
 </section>
-<section id="experiment-feedback">
-<h3>Experiment Feedback<a class="headerlink" href="#experiment-feedback" title="Link to this heading">#</a></h3>
+<section id="key-findings-and-innovations">
+<h2>Key findings and innovations<a class="headerlink" href="#key-findings-and-innovations" title="Link to this heading">#</a></h2>
+<p>Cytely is based on the scientific foundation coming from the Nordenfelt Lab <span id="id1">[<a class="reference internal" href="../../markdown.html#id31" title="Oscar André, Johannes Kumra Ahnlide, Nils Norlin, Vinay Swaminathan, and Pontus Nordenfelt. Data-driven microscopy allows for automated context-specific acquisition of high-fidelity image data. Cell Reports Methods, 3(3):100419, March 2023. URL: http://dx.doi.org/10.1016/j.crmeth.2023.100419, doi:10.1016/j.crmeth.2023.100419.">André <em>et al.</em>, 2023</a>]</span>, leveraging principles from data-driven microscopy (DDM) to significantly enhance accuracy and throughput in spatial single-cell analysis. The platform integrates whole populations overview and data at a single-cell level, allowing for rapid, unbiased identification of cellular phenotypes (Fig. 1). Cytely effectively characterizes thousands of cells based on features such as cell morphology, fluorescence intensity, and subcellular organization. This approach facilitates the precise selection and revisiting of cells of interest, allowing in a second step for high-resolution spatial imaging of rare or phenotypically distinct cellular subsets (Fig. 2).</p>
 <div class="figure-like docutils">
-<p><img alt="Experiment_Feedback" src="../../_images/Experiment_Feedback.png" /></p>
-<p>Fig. 2: <strong>Experiment Feedback</strong></p>
+<p><img alt="Cytely's standard browser GUI" src="../../_images/cytely_01.jpg" /></p>
+<p>Fig. 1: <strong>Cytely’s standard browser GUI.</strong> The mitotic cell subpopulation of a HeLa cell sample is displayed (<a class="reference external" href="https://app.cytely.io/essential/81438ed6-48ee-412a-a2c5-03551edcad0c/results/shared">link to dataset</a>).</p>
 </div>
-<p>This is basically an advanced scripting tool directly integrated into a ZEN acquisition setup. It does require coding but is simpler to set up and in certain situations more powerful than OAD scripts.</p>
-<p>The crucial feature of Experiment Feedback is the possibility to tune many experimental parameters “on-the-fly” during an ongoing acquisition. This includes parameters like exposure time, lamp intensity, time series intervals, objectives, stage positions and many more. It features (like GA) a pre-configured image analysis to measure sample parameters and automatically respond to them.</p>
-<p>Some use cases become very easy to implement with Experiment Feedback, e.g. tracking objects during acquisition. Please find more examples in the linked Github page.</p>
-<p>Links:</p>
-<ul class="simple">
-<li><p><a class="github reference external" href="https://github.com/zeiss-microscopy/OAD/tree/master/Experiment_Feedback">zeiss-microscopy/OAD</a></p></li>
-<li><p><a class="reference external" href="https://www.zeiss.com/microscopy/en/products/software/zeiss-zen/zen-developer-toolkit.html">ZEN Developer Toolkit</a></p></li>
-</ul>
-</section>
-<section id="macro-editor-simple-api-object-model">
-<h3>Macro Editor / Simple API / Object Model<a class="headerlink" href="#macro-editor-simple-api-object-model" title="Link to this heading">#</a></h3>
 <div class="figure-like docutils">
-<p><img alt="Macro Editor" src="../../_images/Macro_Editor.png" /></p>
-<p>Fig. 3: <strong>Macro Editor</strong></p>
+<p><img alt="Cytely's standard browser GUI" src="../../_images/cytely_02.jpg" /></p>
+<p>Fig. 2: <strong>Side by side comparison of initial low-resolution image and curated high-resolution re-imaging of the same cell.</strong> The dataset consists of bovine pulmonary artery endothelial cells (<a class="reference external" href="https://app.cytely.io/essential/5eb05c11-9fd6-4304-a2d2-4e4f8e323a61/results/shared">link to dataset</a>).</p>
 </div>
-<p>The main feature of OAD, as of today, is the scripting interface called “Simple API”. Most importantly, it comes with a small macro editor integrated in ZEN, and it offers interfaces for external applications written e.g. in Python (see links below for more details).</p>
-<p>Internally, the Simple API uses IronPython, which is a C# implementation of Python with the purpose to serve .NET applications. Most noteworthy, this allows for implicit use of ZEN’s object model, hence, direct access to experimental setups, processing functions or czi image, and their respective methods. The macro editor is equipped with debugging, code-completion, recording (of a user’s interaction with ZEN) and documentation, simplifying onboarding and troubleshooting.</p>
-<p>For external applications, COM and TCP-IP interfaces can be used. This allows tackling more complex use cases that requires a more refined code structure or additional libraries.</p>
-<p>Simple API is most useful for integrating standard ZEN functionality into custom workflows for the purpose of process automation. Standard smart microscopy is covered by accessibility of basic HW functions like stage movements and objectives. However, it is not designed to change deeper acquisition parameters dynamically (like Experiment Feedback), and therefore has limitations for advanced smart imaging approaches.</p>
-<p>Links:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/zeiss-microscopy/OAD/tree/master/Scripts_IronPython2">Various scripts</a></p></li>
-<li><p><a class="reference external" href="https://github.com/zeiss-microscopy/OAD/tree/master/Interfaces">Interfaces</a></p></li>
-<li><p><a class="reference external" href="https://github.com/zeiss-microscopy/OAD/tree/master/SmartMicroscopy/Detecting%20Mitosis">Application</a></p></li>
-<li><p><a class="reference external" href="https://www.zeiss.com/microscopy/en/products/software/zeiss-zen/zen-developer-toolkit.html">Developer Toolkit</a></p></li>
-</ul>
+<p>In experiments investigating cellular phagocytosis, Cytely demonstrated its unique ability to visualize the spatial localization of engulfed particles within individual cells, identifying heterogeneity in uptake rates that traditional bulk analyses missed. Similarly, Cytely’s approach enabled automated detection and characterization of cellular events, such as cell division or apoptosis, and allowed for curation of such data through high-resolution re-imaging at a  significantly higher rate and accuracy compared to conventional microscopy.</p>
 </section>
+<section id="methodology-and-implementation-details">
+<h2>Methodology and implementation details<a class="headerlink" href="#methodology-and-implementation-details" title="Link to this heading">#</a></h2>
+<p>Cytely is implemented as a microscopy-based, hardware-agnostic platform compatible with various imaging systems equipped with motorized stages. The workflow begins with a low-resolution, population-level image acquisition phase that rapidly segments and extracts morphological and intensity-based cellular features. The software leverages classical segmentation approaches combined with advanced AI algorithms to robustly characterize cellular phenotypes in real-time, enabling immediate identification of target cell populations.
+Once specific cellular subsets are identified, Cytely triggers high-resolution spatial imaging, automatically directing microscopy resources to acquire detailed, single-cell data. The entire workflow, from image acquisition to analysis and data documentation, is managed within an intuitive, integrated software interface, eliminating the need for complex scripting or manual intervention.
+Image analysis is performed using defined schemas, allowing for easy replication and all datasets are stored centrally and can be shared both internally and externally, facilitating data transparency (<a class="reference external" href="https://app.cytely.io/essential/c4a8fe20-e879-47db-b202-e790c0e5fb14/results/shared">example of shared dataset</a>).</p>
+</section>
+<section id="contributions-to-interoperability">
+<h2>Contributions to interoperability<a class="headerlink" href="#contributions-to-interoperability" title="Link to this heading">#</a></h2>
+<p>Cytely’s platform is completely hardware agnostic and is designed to integrate seamlessly with widely used microscopy systems. The modular and flexible nature of Cytely’s analysis pipeline enables straightforward adaptation to diverse experimental setups and research needs. Its compatibility with open standards and extensive device support promotes broad community adoption and facilitates integration into existing laboratory workflows.</p>
+</section>
+<section id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Link to this heading">#</a></h2>
+<p>While Cytely robustly handles standard microscopy scenarios, particularly challenging tissues with complex segmentation requirements may still present difficulties. Additionally, the system currently relies on user-driven parameter tuning prior to experiments to optimize analysis outcomes, particularly in contexts with significant biological variability. Future iterations aim to implement adaptive parameter tuning algorithms to minimize manual intervention further and enhance the usability and reproducibility of experiments.</p>
+<hr class="docutils" />
+<div class="docutils container" id="id2">
+<div role="list" class="citation-list">
+<div class="citation" id="id31" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Oscar André, Johannes Kumra Ahnlide, Nils Norlin, Vinay Swaminathan, and Pontus Nordenfelt. Data-driven microscopy allows for automated context-specific acquisition of high-fidelity image data. <em>Cell Reports Methods</em>, 3(3):100419, March 2023. URL: <a class="reference external" href="http://dx.doi.org/10.1016/j.crmeth.2023.100419">http://dx.doi.org/10.1016/j.crmeth.2023.100419</a>, <a class="reference external" href="https://doi.org/10.1016/j.crmeth.2023.100419">doi:10.1016/j.crmeth.2023.100419</a>.</p>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -487,20 +472,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="inscoper.html"
+       href="openUC2.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Inscoper</p>
+        <p class="prev-next-title">ImSwitch for openUC2</p>
       </div>
     </a>
     <a class="right-next"
-       href="openUC2.html"
+       href="../../notes.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ImSwitch for openUC2</p>
+        <p class="prev-next-title">Public Notes</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -520,12 +505,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#approaches-to-smart-microscopy">Approaches to smart microscopy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-acquisition-automated-photomanipulation">Guided Acquisition / Automated Photomanipulation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment-feedback">Experiment Feedback</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macro-editor-simple-api-object-model">Macro Editor / Simple API / Object Model</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-focus-and-scientific-questions-asked">Specific Focus and scientific questions asked</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-findings-and-innovations">Key findings and innovations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-and-implementation-details">Methodology and implementation details</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributions-to-interoperability">Contributions to interoperability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
 </ul>
   </nav></div>
 
